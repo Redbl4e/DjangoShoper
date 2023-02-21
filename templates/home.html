@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+{% endblock head %}
+{% block title %}Главная{% endblock title %}
+
+
+{% block content %}
+    <div class="topnav">
+        <a href="/">Главная</a>
+        <a href="#">Контакты</a>
+        <a href="/feedback">Обратная связь</a>
+        <a href="/map">Найди нас на карте</a>
+        {% if user.is_authenticated %}
+            <div class="personal">
+                <a href="#">{{ user.username }}</a>
+                <a href="{% url 'users:logout'%}">Выйти</a>
+            </div>
+        {% else %}
+            <div class="personal">
+                <a href="{% url 'users:registration' %}">Регистрация</a>
+                <a href="{% url 'users:login' %}">Авторизация</a>
+            </div>
+        {% endif %}
+    </div>
+
+
+    <div class="calaisen">
+        <h1>сәлеметсіз бе</h1>
+    </div>
+
+    <div class="balls"></div>
+{% endblock content %}
+

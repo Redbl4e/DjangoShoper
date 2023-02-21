@@ -1,0 +1,84 @@
+body {
+  background:  whitesmoke;
+}
+
+.topnav {
+    color: #050505;
+    height: 80px;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    align-items: flex-start;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    margin-top: 12px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.topnav a:hover {
+    margin-top: 0;
+    height: 80px;
+    background-color: #4CAF50;
+    color: black;
+}
+
+
+.topnav a:active {
+  margin-top: 0;
+    background-color: #4CAF50;
+  color: white;
+}
+
+
+.personal {
+    position: absolute;
+    right: 0;
+    margin-right: 1px;
+}
+
+
+.personal a:hover {
+    margin-top: 0;
+    height: 52px;
+}
+
+
+.balls{
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 20%;
+     background-color: red;
+     width: 100px;
+     height: 100px;
+     border-radius: 100%;
+     animation: bounce 4s linear infinite;
+
+
+}
+
+       @keyframes bounce{
+        0%{
+            transform:   translateY(-100px);
+        }
+        25%{
+            transform:  translateY(0);
+        }
+        50%{
+            transform:  translateY(-100px);
+        }
+        75%{
+            transform:  translateY(0);
+        }
+        100%{
+            transform:   translateY(-100px) ;
+        }
+       }
