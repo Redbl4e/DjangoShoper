@@ -1,3 +1,5 @@
+import os
+from datetime import time
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -96,7 +98,16 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static/'
+]
+
+LOGOUT_REDIRECT_URL = '/'
+
+INTERNAL_IPS = [
+    "127.0.0.1"
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

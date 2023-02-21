@@ -1,9 +1,8 @@
 from django.urls import path
-from shop.views import ShopApiView
-
+from shop.views import ShopViewHome
 
 app_name = 'shop'
 
 urlpatterns = [
-    path('api/shop/', ShopApiView.as_view(), name='home'),
+    path('', ShopViewHome.as_view(), name='home'),
 ]
