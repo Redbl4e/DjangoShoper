@@ -103,6 +103,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static/'
 ]
 
+
 LOGOUT_REDIRECT_URL = '/'
 
 INTERNAL_IPS = [
@@ -111,5 +112,5 @@ INTERNAL_IPS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_ROOT = 'media/'
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media/'

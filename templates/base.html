@@ -1,12 +1,33 @@
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
     {% block head %}{% endblock head %}
 </head>
 <body>
-
+<div class="topnav">
+        <a href="/">Главная</a>
+        <a href="#">Контакты</a>
+        <a href="/feedback">Обратная связь</a>
+        <a href="/map">Найди нас на карте</a>
+        {% if user.is_authenticated %}
+            <div class="personal">
+                <a href="#">{{ user.username }}</a>
+                <a href="{% url 'users:logout' %}">Выйти</a>
+            </div>
+        {% else %}
+            <div class="personal">
+                <a href="{% url 'users:registration' %}">Регистрация</a>
+                <a href="{% url 'users:login' %}">Авторизация</a>
+            </div>
+        {% endif %}
+    </div>
 {% block content %}
 {% endblock content %}
 

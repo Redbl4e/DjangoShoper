@@ -1,25 +1,24 @@
 import time
-
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, login
 from django.contrib.auth.views import LoginView as DjangoLoginView, LogoutView as DjangoLogoutView
-from django.shortcuts import render
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views import View
 from django.views.generic import CreateView
-
 from users.forms import AuthorizationForm, UserCreationForm
 
 user = get_user_model()
 
 
-class RegistrationView(View):
-    def get(self, request):
-        return render(request, 'registration/login.html')
+class RegistrationView(CreateView):
+    model = user
+    form_class = UserCreationForm
+    template_name = 'registration/registration.html'
 
-    def post(self, request):
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            pass
+    """Авторизация на сайте сразу после регистрации """
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('shop:home')
 
 
 class LoginView(DjangoLoginView):

@@ -1,12 +1,11 @@
 body {
-  background:  whitesmoke;
+    background: whitesmoke;
 }
 
 .topnav {
-    color: #050505;
+    background: #000;
     height: 80px;
     overflow: hidden;
-    background-color: #333;
     display: flex;
     align-items: flex-start;
 }
@@ -27,15 +26,15 @@ body {
 .topnav a:hover {
     margin-top: 0;
     height: 80px;
-    background-color: #4CAF50;
+    background-color: white;
     color: black;
 }
 
 
 .topnav a:active {
-  margin-top: 0;
-    background-color: #4CAF50;
-  color: white;
+    margin-top: 0;
+    background-color: white;
+    color: white;
 }
 
 
@@ -48,37 +47,39 @@ body {
 
 .personal a:hover {
     margin-top: 0;
-    height: 52px;
+    height: 80px;
 }
 
 
-.balls{
-     margin-left: auto;
-     margin-right: auto;
-     margin-top: 20%;
-     background-color: red;
-     width: 100px;
-     height: 100px;
-     border-radius: 100%;
-     animation: bounce 4s linear infinite;
+.balls {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    animation: bounce 4s linear infinite;
 
 
 }
 
-       @keyframes bounce{
-        0%{
-            transform:   translateY(-100px);
-        }
-        25%{
-            transform:  translateY(0);
-        }
-        50%{
-            transform:  translateY(-100px);
-        }
-        75%{
-            transform:  translateY(0);
-        }
-        100%{
-            transform:   translateY(-100px) ;
-        }
-       }
+@keyframes bounce {
+    0% {
+        transform: translateY(-100px);
+    }
+    25% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    75% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100px);
+    }
+}
+
+
