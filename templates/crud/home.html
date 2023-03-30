@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Редактирование{% endblock title %}
+{% block content %}
+    <style type="text/css">
+        li{ padding-top: 10px;
+
+        }
+        a {
+            font-size: 120%;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            color: #333366;
+
+        }
+    </style>
+    <li>
+        <button><a href="{% url 'crud:create' %}">Добавить</a></button>
+    </li>
+    <li>
+        <button><a href="{% url 'shop:home' %}">Изменить</a></button>
+    </li>
+    <li>
+        <button><a href="{% url 'shop:home' %}">Удалить</a></button>
+    </li>
+{% endblock content %}

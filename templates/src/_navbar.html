@@ -1,0 +1,18 @@
+<div class="topnav">
+    <a href="{% url 'shop:home' %}">Главная</a>
+    <a href="#">Контакты</a>
+    <a href="#">Обратная связь</a>
+    <a href="#">Найди нас на карте</a>
+    {% if perms.shop.add_category %}
+        <a href="{% url 'crud:home' %}">Редактировать</a>
+    {% endif %}
+    <div class="personal">
+        {% if user.is_authenticated %}
+            <a href="#">{{ user.username }}</a>
+            <a href="{% url 'users:logout' %}">Выйти</a>
+        {% else %}
+            <a href="{% url 'users:login' %}">Авторизация</a>
+            <a href="{% url 'users:registration' %}" class="dropdown-toggle">Регистрация</a>
+        {% endif %}
+    </div>
+</div>

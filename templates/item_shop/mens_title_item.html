@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/item_shop/mens_item.css' %}"/>
+{% endblock head %}
+{% block title %}Мужчины{% endblock title %}
+{% block content %}
+    {% for item in product %}
+        <li class="product-wrapper">
+            <div class="product-item">
+                <img src="{{ item.item_img }}">
+                <div class="product-list">
+                    <h3>{{ item.name }}</h3>
+                    <span class="price">{{ item.price }} ₽</span>
+                    <p>{{ item.description|truncatechars:155 }}</p>
+                    <a href="" class="button">В корзину</a>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+{% endblock content %}

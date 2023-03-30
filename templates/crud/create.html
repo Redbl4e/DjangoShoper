@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Редактирование{% endblock title %}
+{% block content %}
+    <form action="{% url 'crud:create' %}" method="post" enctype="multipart/form-data">
+        Name:<br>{{ form.name }}<br>
+        Description:<br>{{ form.description}}<br>
+        Price:<br>{{ form.price}}<br>
+        Stock:<br>{{ form.in_stock }}<br>
+        Category:<br>{{ form.category_product}}<br>
+        img:<br>{{ form.item_img }}<br>
+        {% csrf_token %}
+        <button type="submit">Добавить</button>
+        <button type="reset">Очистить</button>
+    </form>
+{% endblock content %}

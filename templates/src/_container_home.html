@@ -1,0 +1,124 @@
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/src/container_home.css' %}"/>
+
+{% endblock head %}
+{% block content %}
+    <div id="splash-banners-container" class="bg-light">
+        <div id="logo-splash" class="vertical-middle bg-light">
+            <div class='logo_my'>
+                <h1 class="center-block text-uppercase text-center">
+                    <span class="center-block">YOOX<br><h2>SHOP FASHION / DESIGN+ART</h2></span></h1>
+            </div>
+        </div>
+        <div class="banners-splash-container-wrapper">
+            <div class="banners-splash row text-uppercase text-center center-block">
+                <div class="col-6-24">
+                    <div class="banners-splash-wrapper">
+                        <a href="/ge/для женщин" class="center-block banner-splash-img js-banner-splash-img js-track-me"
+                           data-tracking-action="women" data-tracking-label="go to yoox"
+                           data-enhanced-pagename="splash_page" data-enhanced-slot="imageBanner_1"
+                           data-enhanced-url="https://www.yoox.com/images/yoox80/banners/5569_25_splash_W.jpg?634485886569255397">
+                            <img src="https://www.yoox.com/images/yoox80/banners/5569_25_splash_W.jpg?634485886569255397">
+                        </a>
+                        <a href="/ge/для женщин"
+                           class="center-block js-banner-splash-label font-bold bg-secondary js-track-me"
+                           data-tracking-action="women" data-tracking-label="go to yoox">
+                            <span class="text-size-l">ДЛЯ ЖЕНЩИН</span>
+                        </a>
+                        <div class="banner-splash-more bg-medium text-size-xs js-show-more"
+                             data-ref="#js-show-more-women">
+                            <div class="show-more-open font-bold js-track-me" data-tracking-action="women"
+                                 data-tracking-label="view more">[ ПОДРОБНЕЕ ]
+                            </div>
+                            <div class="show-more-close">×</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6-24">
+                    <div class="banners-splash-wrapper">
+                        <a href="{% url 'shop:menstitle' %}" class="center-block banner-splash-img js-banner-splash-img js-track-me"
+                           data-tracking-action="men" data-tracking-label="go to yoox"
+                           data-enhanced-pagename="splash_page" data-enhanced-slot="imageBanner_2"
+                           data-enhanced-url="https://www.yoox.com/images/yoox80/banners/5569_24_splash_M.jpg?634485886569255397">
+                            <img src="https://www.yoox.com/images/yoox80/banners/5569_24_splash_M.jpg?634485886569255397">
+                        </a>
+                        <a href="/ge/для мужчин"
+                           class="center-block js-banner-splash-label font-bold bg-secondary js-track-me"
+                           data-tracking-action="men" data-tracking-label="go to yoox">
+                            <span class="text-size-l">ДЛЯ МУЖЧИН</span>
+                        </a>
+                        <div class="banner-splash-more bg-medium text-size-xs js-show-more"
+                             data-ref="#js-show-more-men">
+                            <div class="show-more-open font-bold js-track-me" data-tracking-action="men"
+                                 data-tracking-label="view more">[ ПОДРОБНЕЕ ]
+                            </div>
+                            <div class="show-more-close">×</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6-24">
+                    <div class="banners-splash-wrapper">
+                        <a href="/ge/для детей" class="center-block banner-splash-img js-banner-splash-img js-track-me"
+                           data-tracking-action="kids" data-tracking-label="go to yoox"
+                           data-enhanced-pagename="splash_page" data-enhanced-slot="imageBanner_3"
+                           data-enhanced-url="https://www.yoox.com/images/yoox80/banners/5569_19_splash_K.jpg?634485886569255397">
+                            <img src="https://www.yoox.com/images/yoox80/banners/5569_19_splash_K.jpg?634485886569255397">
+                        </a>
+                        <a href="/ge/для детей"
+                           class="center-block js-banner-splash-label font-bold bg-secondary js-track-me"
+                           data-tracking-action="kids" data-tracking-label="go to yoox">
+                            <span class="text-size-l">ДЛЯ ДЕТЕЙ</span>
+                        </a>
+                        <div class="banner-splash-more bg-medium text-size-xs js-show-more"
+                             data-ref="#js-show-more-kids">
+                            <div class="show-more-open font-bold js-track-me" data-tracking-action="kids"
+                                 data-tracking-label="view more">[ ПОДРОБНЕЕ ]
+                            </div>
+                            <div class="show-more-close">×</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6-24">
+                    <div class="banners-splash-wrapper">
+                        <a href="/ge/дизайн+искусство"
+                           class="center-block banner-splash-img js-banner-splash-img js-track-me"
+                           data-tracking-action="designart" data-tracking-label="go to yoox"
+                           data-enhanced-pagename="splash_page" data-enhanced-slot="imageBanner_4"
+                           data-enhanced-url="https://www.yoox.com/images/yoox80/banners/5569_17_splash_D.jpg?634485886569255397">
+                            <img src="https://www.yoox.com/images/yoox80/banners/5569_17_splash_D.jpg?634485886569255397">
+                        </a>
+                        <a href="/ge/дизайн+искусство"
+                           class="center-block js-banner-splash-label font-bold bg-secondary js-track-me"
+                           data-tracking-action="designart" data-tracking-label="go to yoox">
+                            <span class="text-size-l">ДИЗАЙН+ИСКУССТВО</span>
+                        </a>
+                        <div class="banner-splash-more bg-medium text-size-xs js-show-more"
+                             data-ref="#js-show-more-designart">
+                            <div class="show-more-open font-bold js-track-me" data-tracking-action="designart"
+                                 data-tracking-label="view more">[ ПОДРОБНЕЕ ]
+                            </div>
+                            <div class="show-more-close">×</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="banner-splash-bg bg-medium"></div>
+    </div>
+    <div id="footer-copyright" class="fixed-width text-size-s">
+        <div class="row">
+            <div class="col-1-1 text-uppercase text-center">
+                <div id="copyContainer">
+                    <a href="http://www.ynap.com/pages/about-us/what-we-do/" target="_blank">Powered by YOOX
+                        NET-A-PORTER GROUP</a> - <a id="copyright" href="/Legal/Copyright?isoCode=GE" class="js-ydialog"
+                                                    data-ydialog-options="dialogClass:ydialog-sm">Copyright</a> ©
+                    2000-2023 <a id="yooxspa" href="/Legal/company?isoCode=GE" class="js-ydialog"
+                                 data-ydialog-options="dialogClass:ydialog-sm">YOOX NET-A-PORTER GROUP S.p.A.</a> - All
+                    Rights Reserved - Лицензия SIAE № 401/I/526
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
