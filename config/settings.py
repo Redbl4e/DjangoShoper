@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'users',
     'shop',
+    'crud_emploeeys',
     'rest_framework'
 ]
 
