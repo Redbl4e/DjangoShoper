@@ -13,6 +13,13 @@
                     <h3>{{ item.name }}</h3>
                     <span class="price">{{ item.price }} ₽</span>
                     <p>{{ item.description|truncatechars:155 }}</p>
+                    {% if perms.shop.add_category %}
+                        <a href="{% url 'crud:update' item.pk%}" class="button">
+                        Изменить</a>
+                        <a href="{% url 'crud:delete' item.pk%}" class="button">
+                        Удалить</a>
+                    {% else %}
+                    {% endif %}
                     <a href="" class="button">В корзину</a>
                 </div>
             </div>

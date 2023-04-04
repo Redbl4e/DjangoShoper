@@ -10,6 +10,7 @@ class CreateItemForm(ModelForm):
         widgets = {
             'name': TextInput(attrs={
                 'type': 'text'
+
             }),
             'description': TextInput(attrs={
                 'type': 'text'

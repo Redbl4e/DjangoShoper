@@ -1,4 +1,3 @@
-
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -26,6 +25,7 @@ class ShopMensTiTleShoes(APIView):
         context = context_filter(category_product_id=1, in_stock=True)
         return render(request, 'item_shop/mens_title_item.html', context)
         # return Response(context)
+
 
 class ShopMensTiTleDjins(APIView):
     def get(self, request, **kwargs):
