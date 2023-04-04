@@ -21,7 +21,8 @@ class AuthorizationForm(DjangoAuthenticationForm):
         widget=forms.PasswordInput(
             attrs={
                 'class': "form-styling",
-                'type': "text",
+                "id": "password-input",
+                'type': "password",
                 'name': "password",
                 "placeholder": "Введите свой пароль тут..."
             })

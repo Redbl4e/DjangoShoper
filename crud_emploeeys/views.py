@@ -1,11 +1,11 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.http import JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView, UpdateView, DeleteView
 
 from crud_emploeeys.forms import CreateItemForm
+from crud_emploeeys.services.get_pk_and_filter_item import get_pk_and_filter_item_by_pk
 from shop.models.category import Product
 
 
@@ -18,6 +18,7 @@ class ViewCRUD(PermissionRequiredMixin, View):
 
 class CreateItemEmploeeys(PermissionRequiredMixin, CreateView):
     permission_required = "shop.add_category"
+
     success_url = reverse_lazy('shop:home')
 
     def get(self, request, *args, **kwargs):
@@ -48,9 +49,7 @@ class ItemUpdateView(PermissionRequiredMixin, UpdateView):
     success_url = reverse_lazy('shop:home')
 
     def get_object(self, queryset=None):
-        item_pk = self.kwargs.get('pk')
-        item = Product.objects.filter(pk=item_pk).first()
-        return item
+        get_pk_and_filter_item_by_pk(self=self)
 
 
 class ItemDeleteView(PermissionRequiredMixin, DeleteView):
@@ -60,9 +59,7 @@ class ItemDeleteView(PermissionRequiredMixin, DeleteView):
     model = Product
 
     def get(self, request, *args, **kwargs):
-        item_pk = self.kwargs.get('pk')
-        item = Product.objects.filter(pk=item_pk).first()
         context = {
-            "item": item
+            "item": get_pk_and_filter_item_by_pk(self=self)
         }
         return render(request, 'crud/delete.html', context)
