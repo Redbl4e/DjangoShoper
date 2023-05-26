@@ -22,7 +22,8 @@ class CreateItemForm(ModelForm):
                 'type': 'checkbox'
             }),
             'item_img': ClearableFileInput(attrs={
-                'type': 'file'
+                'type': 'file',
+                "enctype":'multipart/form-data'
                 })
         }
 

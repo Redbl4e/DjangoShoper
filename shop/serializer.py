@@ -1,8 +1,5 @@
-from abc import ABC
-
 from rest_framework import serializers
-
-from shop.models.category import  Category, Product
+from shop.models.category import Category, Product
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -16,5 +13,4 @@ class ShopSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ('pk', 'category_product',  'name', 'description', 'price', 'in_stock', 'item_img')
-
+        fields = ('pk', 'category_product', 'name', 'description', 'price', 'in_stock', 'item_img')

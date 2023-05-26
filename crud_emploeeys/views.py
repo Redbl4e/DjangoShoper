@@ -24,8 +24,7 @@ class CreateItemEmploeeys(PermissionRequiredMixin, CreateView):
     def get(self, request, *args, **kwargs):
         form = CreateItemForm()
         context = {
-            'form': form,
-
+            'form': form
         }
         return render(request, 'crud/create.html', context)
 
@@ -49,7 +48,7 @@ class ItemUpdateView(PermissionRequiredMixin, UpdateView):
     success_url = reverse_lazy('shop:home')
 
     def get_object(self, queryset=None):
-        get_pk_and_filter_item_by_pk(self=self)
+        return get_pk_and_filter_item_by_pk(self=self)
 
 
 class ItemDeleteView(PermissionRequiredMixin, DeleteView):
@@ -63,3 +62,4 @@ class ItemDeleteView(PermissionRequiredMixin, DeleteView):
             "item": get_pk_and_filter_item_by_pk(self=self)
         }
         return render(request, 'crud/delete.html', context)
+
